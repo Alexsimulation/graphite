@@ -1,0 +1,32 @@
+{
+    "init": {
+        "mach":{"x":0.0, "y":0.1, "z":-0.7},
+        "pressure":1.0,
+        "temperature":0.71428571428
+    },
+    "mesh":"wing.fvm",
+    "render-patches":["wing", "sides"],
+    "render-var":{"var":"rho", "min":0.0, "max":2.0},
+    "bcs":{
+        "wing":{
+            "type":"slip"
+        },
+        "farfield":{
+            "type":"farfield",
+            "mach":{"x":0.0, "y":0.1, "z":-0.7},
+            "pressure":1.0,
+            "temperature":0.71428571428
+        },
+        "sides":{
+            "type":"slip"
+        }
+    },
+    "controls":{
+        "time":"steady",
+        "tolerance":1e-4,
+        "cfl":0.9
+    },
+    "save":{
+        "file":"wing.vtu"
+    }
+}

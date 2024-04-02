@@ -1,0 +1,7 @@
+build/*
+data/*.su2
+data/*.fvm
+data/*.vtu
+data/*.msh
+log*
+*.exe
